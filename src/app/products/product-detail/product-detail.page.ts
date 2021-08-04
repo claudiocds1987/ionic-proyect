@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/http-request/product.service';
 })
 export class ProductDetailPage implements OnInit {
 
-  product: Product;
+  product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,7 +21,11 @@ export class ProductDetailPage implements OnInit {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       // redirect
       const recipeId = paramMap.get('productId');
-      this.product = this.productService.getProduct(recipeId);
+      this.productService.getImage(recipeId).subscribe(res => {
+        console.log(typeof res);
+        console.log('respuesta get photo ', res);
+        this.product = res;
+      });
     })
   }
 

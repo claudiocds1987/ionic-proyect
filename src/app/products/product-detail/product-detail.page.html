@@ -1,27 +1,29 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/products">
 
       </ion-back-button>
     </ion-buttons>
-    <ion-title>{{product.title}}</ion-title>
+    <ion-title>{{product.tags[0].title}}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <!-- {{product.tags[0].title}} -->
+  {{product.id}}
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col class="ion-no-padding">
-        <ion-img [src]="product.imageURL"></ion-img>
+        <ion-img [src]="product.urls.full"></ion-img>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <h1 class="ion-text-center">{{ product.title }}</h1>
+        <!-- <h1 class="ion-text-center">{{ product.tags[0].title }}</h1> -->
       </ion-col>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col>
         <ion-list *ngIf="product.comments && product.comments.length > 0; else nocomments">
           <ion-item *ngFor="let comment of product.comments">
@@ -32,6 +34,6 @@
           <ion-text><p class="ion-text-center">No comments yet</p></ion-text>
         </ng-template>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 </ion-content>
