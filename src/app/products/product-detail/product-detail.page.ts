@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/http-request/product.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { ProductService } from 'src/app/services/http-request/product.service';
 })
 export class ProductDetailPage implements OnInit {
 
-  //product: Product;
   product;
 
   constructor(
@@ -20,10 +18,7 @@ export class ProductDetailPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      // redirect
-      const recipeId = paramMap.get('productId');
-      // this.product = this.productService.getProduct(recipeId);
-      
+      const recipeId = paramMap.get('productId');   
       this.productService.getImage(recipeId).subscribe(res =>{
         console.log(typeof res);
         console.log('respuesta get photo ', res);

@@ -9,13 +9,10 @@ import { ProductService } from '../services/http-request/product.service';
 })
 export class ProductsPage implements OnInit {
 
-  //products: Product[] = [];
   products = [];
   
   constructor(private productService: ProductService) { }
-
   ngOnInit() {
-   //this.products = this.productService.getProducts();
    this.getImages('laptop');
   }
 
