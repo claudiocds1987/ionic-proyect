@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  ENDPOINT = 'https://api.unsplash.com/search/photos/';
+  ACCES_KEY = '-3xOl_8KyfJy_flMdMo24S8k6IUqaPF_hJHRC8yGABY';
 
   products: Product[] = [
     {
@@ -33,8 +37,20 @@ export class ProductService {
     },
   ]
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
+  getImages(image: string){
+    return this.httpClient.get<any[]>(
+      `${this.ENDPOINT}?query=${image}&client_id=${this.ACCES_KEY}`
+    );
+  }
+
+  getImage(id: string){
+    return this.httpClient.get<any>(
+      `https://api.unsplash.com/photos/${id}?client_id=${this.ACCES_KEY}`
+    );
+  }
+  
   getProducts(){
     return [...this.products];
   }
