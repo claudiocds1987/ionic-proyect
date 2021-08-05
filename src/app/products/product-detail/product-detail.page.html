@@ -1,6 +1,42 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>{{product.title}}</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="product?.urls.small"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{ product?.alt_description }}</h1>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-list *ngIf="product.comments && product.comments.length > 0; else nocomments">
+          <ion-item *ngFor="let comment of product.comments">
+            {{comment}}
+          </ion-item>
+        </ion-list>
+        <ng-template #nocomments>
+          <ion-text><p class="ion-text-center">No comments yet</p></ion-text>
+        </ng-template>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>
+
+<!-- <ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/products">
 
       </ion-back-button>
@@ -34,4 +70,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
+</ion-content> -->
