@@ -9,12 +9,21 @@ import { ProductService } from '../services/http-request/product.service';
 })
 export class ProductsPage implements OnInit {
 
-  products: Product[] = [];
+  //products: Product[] = [];
+  products = [];
   
-  constructor(private productService:ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-   this.products = this.productService.getProducts();
+   //this.products = this.productService.getProducts();
+   this.getImages('laptop');
+  }
+
+  getImages(search: string){
+    this.productService.getImages(search).subscribe((res) => {
+      console.log(res['results']);
+      this.products = res['results'];
+    });
   }
 
 }
