@@ -1,0 +1,19 @@
+En Ionic cuando se crea el proyecto, crea por defecto la carpeta .git. Entonces
+para subirlo a gitHub
+
+1) crea el repositorio en git hub como siempre
+
+2) Abrir el proyecto de IOnic y por consola del visual studio:
+
+a) git status
+b) git add .
+c) git commit -m "primer commit"
+d) git status (va a responder Onbranch master nothing to commit, working tree clean)
+e) Ahora hay que añadirle la nueva ruta del repositorio creado en git Hub:
+   En este caso el repositorio se llama react-app-operations
+
+git remote add origin https://github.com/claudiocds1987/react-app-operations.git
+
+f) git push -u origin master (copiar tal cual esta)
+
+y listo!.
