@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 // components
 import { LayoutComponent } from './layout/layout.component';
+//import { ProductDetailComponent } from './home/components/product-detail/product-detail.component'; // ??
 
 const routes: Routes = [
   {
@@ -16,21 +17,7 @@ const routes: Routes = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
-      },
-      {
-        path: 'products',
-        children: [
-          {
-            path: "",
-            loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule)
-          },
-          {
-            path: ":productId",
-            loadChildren: () => import('./products/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
-          }
-        ]
-        
-      },
+      },  
     ]
   },
 ];
