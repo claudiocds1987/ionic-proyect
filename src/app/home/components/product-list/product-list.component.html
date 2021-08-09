@@ -11,7 +11,7 @@
           <ion-img class="img" [src]="product?.urls.small"></ion-img>
           <ion-card-content>
             <div class="div-flex">
-              <a [routerLink]="['/products', product?.id]">{{product.description}}</a>
+              <a [routerLink]="['./products', product?.id]">{{product.description}}</a>
                 <div>
                   <ion-icon name="thumbs-up-sharp" size="small"></ion-icon>
                   <span>{{product.likes}}</span>    
