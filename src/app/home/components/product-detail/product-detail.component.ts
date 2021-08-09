@@ -4,10 +4,10 @@ import { ProductService } from 'src/app/services/http-request/product.service';
 
 @Component({
   selector: 'app-product-detail',
-  templateUrl: './product-detail.page.html',
-  styleUrls: ['./product-detail.page.scss'],
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.scss'],
 })
-export class ProductDetailPage implements OnInit {
+export class ProductDetailComponent implements OnInit {
 
   product;
 

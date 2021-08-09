@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // import { Product } from '../models/product.model';
-import { ProductService } from '../services/http-request/product.service';
+import { ProductService } from '../../../services/http-request/product.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.page.html',
-  styleUrls: ['./products.page.scss'],
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss'],
 })
-export class ProductsPage implements OnInit {
+export class ProductListComponent implements OnInit {
 
   products = [];
   
@@ -22,5 +22,4 @@ export class ProductsPage implements OnInit {
       this.products = res['results'];
     });
   }
-
 }
