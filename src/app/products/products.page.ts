@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product.model';
+// import { Product } from '../models/product.model';
 import { ProductService } from '../services/http-request/product.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ProductsPage implements OnInit {
   
   constructor(private productService: ProductService) { }
   ngOnInit() {
-   this.getImages('laptop');
+   this.getImages('nike shoes');
   }
 
   getImages(search: string){

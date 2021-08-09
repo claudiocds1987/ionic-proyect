@@ -7,9 +7,16 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+// components
+import { NavComponent } from './nav/nav.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NavComponent, 
+    LayoutComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule, 
