@@ -17,7 +17,6 @@ a{
 
 ion-icon {
     margin-right: 8px;
-    // color: blue;
 }
 
 @media (min-width: 300px) {
@@ -26,8 +25,17 @@ ion-icon {
     }
 }
 
+@media (min-width: 540px) {
+    // .card{
+    //     width: 300px;
+    // }
+    .img{
+        height: 300px;
+    }
+}
+
 @media (min-width: 720px) {
     .img{
-        height: 200px;
+        height: 220px;
     }
 }

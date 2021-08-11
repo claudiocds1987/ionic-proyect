@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { Product } from '../models/product.model';
-import { ProductService } from '../../../services/http-request/product.service';
+import { FakestoreapiService } from '../../../services/http-request/fakestoreapi.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,15 +11,25 @@ export class ProductListComponent implements OnInit {
 
   products = [];
   
-  constructor(private productService: ProductService) { }
+  constructor(
+    private fakestoreapiService: FakestoreapiService,
+    private cartService: CartService
+    ) { }
+  
   ngOnInit() {
-   this.getImages('nike shoes');
+   this.getProducts();
   }
 
-  getImages(search: string){
-    this.productService.getImages(search).subscribe((res) => {
-      console.log(res['results']);
-      this.products = res['results'];
-    });
+  getProducts(){
+    this.fakestoreapiService.getProducts().subscribe(res => {
+      this.products = res;
+    })
   }
+
+  addCart(product: any){
+    console.log(product);
+    //this.cartService.addProduct(product);
+    localStorage.clear();
+  }
+
 }
