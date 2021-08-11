@@ -3,11 +3,10 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/products"></ion-back-button>
     </ion-buttons>
-    <!-- <ion-title>{{product.title}}</ion-title> -->
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid class="ion-no-padding">
+  <!-- <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col class="ion-no-padding">
         <ion-img [src]="product?.urls.small"></ion-img>
@@ -18,6 +17,59 @@
         <h1 class="ion-text-center">{{ product?.alt_description }}</h1>
       </ion-col>
     </ion-row>
-  </ion-grid>
-</ion-content>
+  </ion-grid> -->
 
+  <div id="cont-card">
+    <ion-card class="card" *ngIf="product">
+      <div id="cont-flex">
+        <div>
+          <ion-img class="img" [src]="product?.image"></ion-img>
+        </div>
+        <div>
+          <ion-card-header>
+            <ion-card-title>{{ product?.title }}</ion-card-title>
+            <ion-label>Precio: {{ product?.price | currency }}</ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ product?.description }}</p>
+          </ion-card-content>
+          <div class="ion-text-center">
+            <ion-button color="primary">
+              <ion-icon
+                slot="icon-only"
+                name="cart-outline">
+              </ion-icon>
+                Buy
+            </ion-button>
+          </div>
+        </div>
+      </div>
+      <!-- <ion-img class="img" [src]="product?.image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{product?.title}}</ion-card-title>
+        <ion-label>Precio: {{ product?.price | currency }}</ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{product?.description}}</p>  
+      </ion-card-content> -->
+      <!-- <div class="ion-text-center">
+        <ion-button color="primary">Buy</ion-button>
+      </div>   -->
+    </ion-card>
+  </div>
+  <!-- <div *ngIf="product">
+    <ion-card class="card" *ngIf="product">
+      <ion-img class="img" [src]="product?.image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{product?.title}}</ion-card-title>
+        <ion-label>Precio: {{ product?.price | currency }}</ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{product?.description}}</p>  
+      </ion-card-content>
+      <div class="text-center">
+        <ion-button color="primary">Buy</ion-button>
+      </div>  
+    </ion-card>
+  </div> -->
+</ion-content>
