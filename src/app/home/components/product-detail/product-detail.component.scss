@@ -1,0 +1,15 @@
+ion-icon{
+    margin-right: 12px;
+}
+
+@media (min-width: 720px) {
+
+    #cont-card{
+        width: 700px;
+        margin: auto;
+        #cont-flex{
+            display: flex;
+        }
+    }
+    
+}
